@@ -32,23 +32,20 @@ function autorun() {
             $(form).submit(function (e) {
                 e.preventDefault();
                 var data = $('#contact_form').serialize();
-                count += 1;
-                console.log('count: ',count);
+                console.log(data);
                 $.ajax({
                     url: 'https://www.tapapp.com/1755417/LeadImport/NewForm.aspx',
                     type: 'POST',
-                    headers: {
-                        'Access-Control-Allow-Origin': "*",
-                    },
+                    crossDomain: true,
                     data: data,
-                    dataType: 'json',
                     success: function (response) {          
                         $('select').val('');
                         $('input').val('');
                         var res = JSON.parse(response)
+                        console.log(res);
                     },
                     error: function (xhr, status) {
-                        console.log(xhr, status);
+                        console.log("XHR:",xhr, "Status: ", status);
                     }
                 });
             });
