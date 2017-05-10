@@ -27,27 +27,24 @@ function autorun() {
             lastname: "Please enter your last name",
             email: "Please enter a valid email address"
         },
-        submitHandler: function (form) {
-            
-            $(form).submit(function (e) {
-                e.preventDefault();
-                var data = $('#contact_form').serialize();
-                console.log(data);
-                $.ajax({
-                    url: 'https://www.tapapp.com/1755417/LeadImport/NewForm.aspx',
-                    type: 'POST',
-                    crossDomain: true,
-                    data: data,
-                    success: function (response) {          
-                        $('select').val('');
-                        $('input').val('');
-                        var res = JSON.parse(response)
-                        console.log(res);
-                    },
-                    error: function (xhr, status) {
-                        console.log("XHR:",xhr, "Status: ", status);
-                    }
-                });
+        submitHandler: function (form, e) {
+            e.preventDefault();
+            var data = $('form').serialize();
+            console.log(data);
+            $.ajax({
+                url: 'https://www.tapapp.com/1755417/LeadImport/NewForm.aspx',
+                type: 'POST',
+                crossDomain: true,
+                data: data,
+                success: function (response) {          
+                    $('select').val('');
+                    $('input').val('');
+                    var res = JSON.parse(response);
+                    console.log(res);
+                },
+                error: function (xhr, status) {
+                    console.log("XHR:",xhr, "Status: ", status);
+                }
             });
         }
     });
