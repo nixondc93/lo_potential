@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Know Your Score</title>
+
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <link rel="stylesheet" href="normalize.css" type="text/css">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+        <div data-reactroot="" id="app">
+            <header id="headerBar">
+                <div class="wrapper">
+                    <h1>Know Your Score</h1>
+                </div>
+            </header>
+            <main>
+                <div id="scorecard">
+                    <div id="overview">
+                        <h2>Introduction</h2>
+                        <p>
+                            You've been invited to complete the scorecard
+                            <strong>"Top Loan Officer Potential"</strong>
+                            as seen below. The process should take about 5 minutes.
+                        </p>
+                        
+                        <div class="scorecard">
+                            <h2>
+                                <div class="field field-title disabled"><textarea class="text" disabled="" maxlength="26">Top Loan Officer Potential</textarea>
+                                    <div class="text placeholder" style="display: none;">Scorecard Title</div>
+                                </div>
+                            </h2>
+                            <table id="score_table">
+                                <thead>
+                                    <tr class="header">
+                                        <th>Mindsets</th>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td class="score">Score</td>
+                                        <td class="goal">Goal</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">1</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Personal Growth / Ambition Mindset</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You are frightened by changes and prefer things to stay as they currently are. You are not interested in change or growth.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You are starting to understand the possibilities of growth in all areas of your life, though you feel stuck.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You've experienced an acceptable status level, &amp; wish to maintain this level. You're not interested in further growth requiring more effort</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You always look for ways to grow and people who can help you become a better version of yourself. You may have a Business/Life Coach</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_1_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_1_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">2</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">CEO Mindset</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You feel your company should provide direction for your business future &amp; you depend on their support to determine your success.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You understand the concepts of being self-made and try to align with a company that will help support your desired growth.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You work to improve your skills, but feel your company/manager should be responsible to provide the tools needed to succeed.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You treat your business like "You, Inc." You have marketing/business plans &amp; you do not rely on others to invest in your success.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_2_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_2_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">3</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Sense of Urgency</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You are afraid of doing things that others may perceive as "pushy" &amp; you tend to let life happen at its own pace &amp; aren't quick to act.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You are beginning to realize that you need to act quickly to seize opportunities in your life, yet you don't know how to do it.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You find there are times when you have acted quickly &amp; it has helped you and others, yet you find it hard to do when the stakes are highest.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">Your belief is that things need to happen right now before something changes and you relentlessly encourage others to move now.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_3_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_3_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">4</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Your Team</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You do not see the benefit in adding a member to your team, or you would not want the responsibility.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You feel an assistant or partner could be helpful, but you haven't figured out how to fund them or how they would fit into your system.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You have at least 1 other member on your team and you have clearly defined roles for each person.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You have a full production team that predictably generates business whether you are in the office or not. Each member knows their role.</textarea>
+                                            </div>
+                                        </td>
+                                     <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_4_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_4_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">5</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Systematic &amp; Proactive</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You start each day without a plan. You are best at winging it.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">Most of your day is spent reacting to phone calls and emails. Your best intentions sometimes take the back seat to the crisis of the moment.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You have created systems that limit crisis management, giving you more time to prospect for new business.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You map out your days which keeps you focused on business generating activities regardless of what's going on around you.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_5_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_5_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">6</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Production Results</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">Your average 12 Month Productions is:       
+Less than 5 loans per month.		
+                                                </textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">Your average 12 Month Productions is:       
+6-10 loans per month.		
+                                                </textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">Your average 12 Month Productions is:      
+10-20  loans per month.		
+                                                </textarea>
+
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">Your average 12 Month Productions is:       
+21+ loans per month.		
+                                                </textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_6_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_6_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">7</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Competitive Mindset</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You feel competition is only for athletes and do not care about how you rank amongst your peers.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You want to win personally &amp; professionally in all areas of your life but aren't sure how to succeed.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You like to win at the things you deem important and feel the effort is more important than the results.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You want to win at everything you do and you are willing to put forth whatever effort is needed to guarantee victory.</textarea>
+                                            </div>
+                                        </td>
+                                    <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_7_score" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6"></option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_7_goal" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="2">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">8</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">Industry Lifestyle</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You feel you should always separate business &amp; pleasure, &amp; treat each closing as a business transaction.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You'd like to find others with your same mindset to collaborate with but aren't sure where to find these groups to reach out.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You go to industry events and enjoy socializing at these events but prefer not talking shop during your personal time. </textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">You enjoy talking shop with friends, family &amp; clients. You don't consider it "work". Hanging out with others in "Biz" is fun, like a hobby.</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_8_score" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_8_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="footer">
+                                        <th>
+                                            <div class="total-label">Total Scores</div>
+                                        </th>
+                                        <td colspan="12">
+                                        </td>
+                                        <td id="score">0</td>
+                                        <td id="goal">0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                                                        <div class="info">
+                                <div class="survey" id="survey-intro">
+                                    <h2><strong>Your Information</strong></h2>
+                                    <p>Once you've completed the scorecard, please add your name and email. After you submit an email with your completed scorecard will be sent to you.</p>
+                                    <form id="contact_form">
+                                        <input type="text" name="row_1_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_1_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_2_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_2_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_3_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_3_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_4_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_4_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_5_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_5_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_6_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_6_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_7_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_7_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_8_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_8_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="total_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="total_goal" value="" class="valid form-control hide"/>
+                                        <div><input type="text" name="firstName" value="" placeholder="First Name" class="form-control"/></div>
+                                        <div><input type="text" name="lastName" value="" placeholder="Last Name" class="form-control"/></div>
+                                        <div><input type="email" name="email" value="" placeholder="Email" class="form-control"/></div>
+                                        <div><button type="submit" class="form-control btn">Submit</button></div>
+                                    </form>
+                                    <h4 class="hide success">You successfully submitted your information. Thank you! </h4>
+                                    <h4 class="hide error">We're sorry there has been an error. Please try again later.</h4> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer id="footerBar">
+                Copyright 2017
+            </footer>
+        </div>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha256-UOSXsAgYN43P/oVrmU+JlHtiDGYWN2iHnJuKY9WD+Jg=" 
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="./index.js">
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,768 @@
+.success{
+    color: green; 
+}
+
+.error{
+    color: red; 
+}
+
+.btn {
+    background-color: #644459;
+    border: 1px solid #644459;
+    color: #fff;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out
+}
+
+.btn:active,
+.btn:focus,
+.btn:hover {
+    background-color: #523849;
+    border-color: #523849;
+    color: #fff
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    min-width: 925px;
+}
+
+a {
+    color: #644459
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 0
+}
+
+.arrow svg {
+    width: 100%;
+    vertical-align: middle
+}
+
+.field,
+.field .text {
+    font-weight: inherit;
+    line-height: inherit;
+    position: relative
+}
+
+.field .text {
+    background: transparent;
+    border: none;
+    display: block;
+    padding: 0;
+    text-align: inherit;
+    resize: none;
+    z-index: 10000001
+}
+
+.field .text:focus {
+    outline: none
+}
+
+.field .text.placeholder {
+    font-weight: inherit;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000000
+}
+
+.scorecard {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+    margin: 10px auto;
+    padding: 20px 40px 30px;
+    max-width: 1200px
+}
+
+@media print {
+    .scorecard {
+        border: 0;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%
+    }
+}
+
+.scorecard h2 {
+    color: #d77a27;
+    height: 1.4em;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.3em;
+    margin: 0;
+    overflow: hidden
+}
+
+.scorecard h2 .text {
+    width: 100%
+}
+
+.scorecard h2 .text::-moz-selection {
+    background-color: rgba(215, 122, 39, .2)
+}
+
+.scorecard h2 .text::selection {
+    background-color: rgba(215, 122, 39, .2)
+}
+
+.scorecard table {
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    font-size: 12px;
+    width: 100%;
+}
+
+.scorecard td,
+.scorecard th {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 6px;
+    position: relative;
+    vertical-align: top
+}
+
+.scorecard td .field>.text,
+.scorecard th .field>.text {
+    height: 72px;
+    overflow: hidden;
+    width: 100%
+}
+
+.scorecard th {
+    background-color: rgba(255, 247, 154, .25)
+}
+
+.scorecard th .mindset {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding-left: 24px;
+    vertical-align: middle
+}
+
+.scorecard td {
+    background-color: rgba(114, 84, 111, .25)
+}
+
+.scorecard td:nth-of-type(2) {
+    background-color: rgba(113, 153, 177, .25)
+}
+
+.scorecard td:nth-of-type(3) {
+    background-color: rgba(138, 155, 60, .25)
+}
+
+.scorecard td:nth-of-type(4) {
+    background-color: rgba(221, 94, 0, .25)
+}
+
+.scorecard td:nth-of-type(5) {
+    background-color: rgba(255, 247, 154, .25)
+}
+
+.scorecard td:nth-of-type(6) {
+    background-color: rgba(5, 66, 134, .25)
+}
+
+.scorecard .goal,
+.scorecard .score {
+    text-align: center
+}
+
+.scorecard.scored .goal,
+.scorecard.scored .score {
+    display: table-cell
+}
+
+.scorecard .row-number {
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: 10px;
+    left: 0;
+    padding: 2px 4px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    min-width: 1.6em
+}
+
+.scorecard .header td,
+.scorecard .header th {
+    border-right: none;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle
+}
+
+.scorecard .header td:first-child:after,
+.scorecard .header th:first-child:after {
+    display: none
+}
+
+.scorecard .header td:last-child,
+.scorecard .header th:last-child {
+    border-right: 1px solid #000
+}
+
+.scorecard .header td:after,
+.scorecard .header th:after {
+    background-color: hsla(0, 0%, 100%, .5);
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px
+}
+
+.scorecard .header th {
+    background-color: #054286;
+    width: 20%
+}
+
+.scorecard .header td {
+    background-color: #72546f
+}
+
+.scorecard .header td:nth-of-type(-n+12) {
+    width: 6%
+}
+
+.scorecard .header td:nth-of-type(n+4) {
+    background-color: #7199b1
+}
+
+.scorecard .header td:nth-of-type(n+7) {
+    background-color: #8a9b3c
+}
+
+.scorecard .header td:nth-of-type(n+10) {
+    background-color: #dd5e00
+}
+
+.scorecard .header td:nth-of-type(n+12) {
+    border-right: 1px solid #000
+}
+
+.scorecard .header td:nth-of-type(n+13) {
+    background-color: #054286;
+    font-size: 10px;
+    padding: 5px
+}
+
+.scorecard .footer td,
+.scorecard .footer th {
+    text-align: center;
+    vertical-align: middle
+}
+
+.scorecard .footer th {
+    background-color: #054286;
+    color: #fff
+}
+
+.scorecard .footer td:nth-of-type(1) {
+    background-color: #fff;
+    padding: 0;
+    vertical-align: middle
+}
+
+.scorecard .footer td:nth-of-type(2) {
+    background-color: rgba(255, 247, 154, .5)
+}
+
+.scorecard .footer td:nth-of-type(3) {
+    background-color: rgba(5, 66, 134, .5)
+}
+
+.scorecard .footer .arrow {
+    fill: #72546f;
+    padding: 2px 0;
+    width: 6.2%
+}
+
+.scorecard .footer .arrow svg {
+    width: 75%
+}
+
+.scorecard .footer .arrow:nth-of-type(n+5) {
+    fill: #7199b1
+}
+
+.scorecard .footer .arrow:nth-of-type(n+9) {
+    fill: #8a9b3c
+}
+
+.scorecard .footer .arrow:nth-of-type(n+13) {
+    fill: #dd5e00
+}
+
+.scorecard .total-label {
+    
+}
+
+.scorecard.scored .total-label {
+    display: block
+}
+
+.feedback {
+    width: 50%
+}
+
+.invalid {
+    background: url("./assets/red_cross.png") no-repeat 99% 50%
+}
+
+.valid {
+    background: url("./assets/green_checkmark.png") no-repeat 99% 50%
+}
+
+footer {
+    bottom: 0;
+    font-size: 10px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 100%
+}
+
+@media print {
+    footer {
+        padding-bottom: 0
+    }
+}
+
+header {
+    background-color: #644459;
+    padding: 0 10px
+}
+
+header .wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px 0;
+    position: relative
+}
+
+header h1 {
+    font-family: Helvetica Neue, Open Sans, Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    opacity: .9;
+    text-transform: uppercase;
+    color: white;
+}
+
+@media (max-width:800px) {
+    header h1 {
+        padding-top: 24px
+    }
+}
+
+header nav {
+    position: absolute;
+    top: 10px;
+    right: 10px
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+header nav li {
+    color: hsla(0, 0%, 100%, .5);
+    display: inline-block
+}
+
+header nav li:before {
+    content: '|';
+    margin: 0 5px
+}
+
+header nav li:first-of-type:before {
+    content: ''
+}
+
+header nav a,
+header nav a:focus,
+header nav a:hover {
+    color: #fff;
+    font-weight: 300
+}
+
+header #dropdownLabel {
+    background-color: #644459;
+    border: 1px solid #402b39;
+    color: #fff
+}
+
+header #dropdownLabel:focus,
+header #dropdownLabel:hover {
+    background-color: #523849;
+    outline: none
+}
+
+header .dropdown-menu>li>a {
+    font-weight: 400
+}
+
+header .dropdown-menu>li>a:focus,
+header .dropdown-menu>li>a:hover {
+    background-color: rgba(100, 68, 89, .2)
+}
+
+@media print {
+    header {
+        display: none
+    }
+}
+
+#root {
+    position: relative
+}
+
+#dashboard #scorecard {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+#dashboard #scorecard a.btn,
+#dashboard #scorecard span.btn {
+    color: #fff;
+    display: inline-block;
+    margin: 5px
+}
+
+#dashboard #scorecard h3 {
+    font-weight: 300
+}
+
+#dashboard #scorecard h3 em {
+    font-size: 14px;
+    opacity: .2
+}
+
+#dashboard #scorecard .search-bar {
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 50%
+}
+
+#dashboard #scorecard .search-input {
+    margin-top: 10px;
+    margin-right: 10px
+}
+
+#dashboard #scorecard .no-results-found {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 700
+}
+
+#dashboard #scorecard .responses {
+    margin: 10px
+}
+
+#dashboard #scorecard table em {
+    opacity: .5
+}
+
+#dashboard #scorecard #share {
+    margin: 20px auto
+}
+
+#dashboard #scorecard #share h2 {
+    display: none
+}
+
+#dashboardScorecard a.btn,
+#dashboardScorecard span.btn {
+    color: #fff;
+    display: inline-block;
+    margin: 5px
+}
+
+#dashboardScorecard .active {
+    background-color: #644459;
+    border-color: #644459
+}
+
+.mindset {
+    margin: 0 auto;
+    max-width: 600px;
+    position: relative
+}
+
+.mindset h2 {
+    font-weight: 300
+}
+
+.mindset form {
+    text-align: center
+}
+
+.mindset .score {
+    background-color: rgba(100, 68, 89, .25);
+    margin: 0 auto;
+    padding: 10px
+}
+
+.mindset .score input,
+.mindset .score textarea {
+    margin-bottom: 10px
+}
+
+.mindset .criteria {
+    text-align: left;
+    width: 100%
+}
+
+.mindset .criteria .criteria-text {
+    max-width: 500px;
+    overflow: auto;
+    padding: 20px
+}
+
+.mindset .criteria tr td:first-of-type {
+    border-bottom: 1px solid hsla(0, 0%, 100%, .5);
+    color: #fff;
+    padding: 4px 6px;
+    text-align: center;
+    width: 20px
+}
+
+.mindset .criteria tr:nth-of-type(n+1) td {
+    background-color: rgba(114, 84, 111, .25)
+}
+
+.mindset .criteria tr:nth-of-type(n+1) td:first-of-type {
+    background-color: #72546f
+}
+
+.mindset .criteria tr:nth-of-type(n+4) td {
+    background-color: rgba(113, 153, 177, .25)
+}
+
+.mindset .criteria tr:nth-of-type(n+4) td:first-of-type {
+    background-color: #7199b1
+}
+
+.mindset .criteria tr:nth-of-type(n+7) td {
+    background-color: rgba(138, 155, 60, .25)
+}
+
+.mindset .criteria tr:nth-of-type(n+7) td:first-of-type {
+    background-color: #8a9b3c
+}
+
+.mindset .criteria tr:nth-of-type(n+10) td {
+    background-color: rgba(221, 94, 0, .25)
+}
+
+.mindset .criteria tr:nth-of-type(n+10) td:first-of-type {
+    background-color: #dd5e00
+}
+
+#no-match {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+#no-match h2 {
+    font-weight: 600
+}
+
+#overview {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+#overview h2 {
+    font-weight: 600
+}
+
+#overview .scorecard {
+    margin: 20px 0
+}
+
+#overview .controls,
+#overview .instructions {
+    display: none
+}
+
+#scorecard .instructions {
+    margin: 20px auto;
+    max-width: 1200px
+}
+
+#scorecard .instructions h2,
+#scorecard .instructions p {
+    margin: 10px 0
+}
+
+#scorecard .instructions h2 {
+    font-weight: 600
+}
+
+#scorecard .controls {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: right
+}
+
+#scorecard .controls .btn {
+    margin-left: 10px;
+    margin-top: 10px
+}
+
+#scorecard .controls a:visited {
+    color: #fff
+}
+
+#scorecards {
+    margin: 0 auto;
+    max-width: 1200px
+}
+
+#scorecards table {
+    width: 100%
+}
+
+#scorecards th:first-of-type {
+    width: 80%
+}
+
+#scorecards a:focus,
+#scorecards a:hover {
+    background-color: transparent
+}
+
+#share,
+.share {
+    margin: 0 auto;
+    max-width: 600px
+}
+
+#share h2,
+.share h2 {
+    font-weight: 600;
+    margin-bottom: 20px
+}
+
+#share a,
+.share a {
+    text-decoration: underline
+}
+
+.survey {
+    margin: 0 auto;
+    max-width: 600px
+}
+
+.survey h2 {
+    font-weight: 300
+}
+
+.survey input {
+    margin: 10px 0
+}
+
+.survey button:disabled {
+    background-color: #644459
+}
+
+#thank-you {
+    margin: 0 auto;
+    max-width: 1200px
+}
+
+#thank-you h2 {
+    font-weight: 600
+}
+
+#thank-you .scorecard {
+    margin: 20px 0
+}
+
+#thank-you .controls {
+    text-align: right
+}
+
+#thank-you .controls .btn {
+    margin: 0
+}
+
+@page {
+    size: portrait
+}
+
+@media print {
+    .noprint {
+        display: none!important
+    }
+    body,
+    html,
+    main {
+        background-color: #fff!important;
+        margin: 0!important
+    }
+    html {
+        height: 0
+    }
+    .scorecard {
+        margin: 0!important;
+        page-break-before: always
+    }
+    .scorecard,
+    tr .scorecard {
+        page-break-inside: avoid
+    }
+    h2 .text {
+        size: 12pt!important;
+        margin: 0!important;
+        padding: 0!important
+    }
+}
+
+body {
+    background-color: rgba(255, 247, 154, .1)
+}
+
+main {
+    margin: 10px
+}
+
+h2 {
+    font-weight: 300
+}
+
+@media screen and (max-width: 1000px) {
+	table {
+		overflow-x: auto;
+		display: block;
+	}
+}

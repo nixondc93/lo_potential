@@ -1,0 +1,25 @@
+{
+  "name": "lo_potential",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nixondc93/lo_potential.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nixondc93/lo_potential/issues"
+  },
+  "homepage": "https://github.com/nixondc93/lo_potential#readme",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
