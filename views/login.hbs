@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./styles/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./styles/stylesheet.css" type="text/css">
+</head>
+<body>
+    <div id="root">
+        <div data-reactroot="" id="app">
+            <header id="headerBar">
+                <div class="wrapper">
+                    <h1>Know Your Score</h1>
+                </div>
+            </header>
+            <div class="survey" id="survey-intro">
+                <h2><strong>Login</strong></h2>
+                <form id="contact_form">
+                    <div><input type="email" name="email" value="" placeholder="Email" class="form-control"/></div>
+                    <div><input type="password" name="password" value="" placeholder="Password" class="form-control"/></div>
+                    <div><button type="submit" class="form-control btn">Submit</button></div>
+                </form>
+            </div>
+            <footer id="footerBar">
+                Copyright 2017
+                <a>Admin Login</a>
+            </footer>
+        </div>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha256-UOSXsAgYN43P/oVrmU+JlHtiDGYWN2iHnJuKY9WD+Jg=" 
+        crossorigin="anonymous">
+    </script>
+    <script 
+        type="text/javascript" 
+        src="./scripts/login.js">
+    </script>
+</body>
+
+</html>

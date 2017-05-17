@@ -318,10 +318,6 @@ a {
     fill: #dd5e00
 }
 
-.scorecard .total-label {
-    
-}
-
 .scorecard.scored .total-label {
     display: block
 }
@@ -331,11 +327,11 @@ a {
 }
 
 .invalid {
-    background: url("./assets/red_cross.png") no-repeat 99% 50%
+    background: url("../assets/red_cross.png") no-repeat 99% 50%
 }
 
 .valid {
-    background: url("./assets/green_checkmark.png") no-repeat 99% 50%
+    background: url("../assets/green_checkmark.png") no-repeat 99% 50%
 }
 
 footer {

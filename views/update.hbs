@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Know Your Score</title>
+
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <link rel="stylesheet" href="./styles/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./styles/stylesheet.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+        <div data-reactroot="" id="app">
+            <header id="headerBar">
+                <div class="wrapper">
+                    <h1>Know Your Score</h1>
+                </div>
+            </header>
+            <main>
+                <div id="scorecard">
+                    <div id="overview">
+                        <div class="scorecard">
+                            <h2>Update the Form Here:</h2>
+                            <br/>
+                            <h4>Clear form completely: </h4>
+                            <button class="btn clearBtn">Clear Form</button>
+                            <br/>
+                            <br/>
+                            <form>
+                            <table id="score_table">                                
+                                <thead>
+                                    <tr class="header">
+                                        <th>Mindsets</th>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">1</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_1_title" style="width: 240px" rows="3" maxlength="40">{{row_1.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_1_column_1" style="width: 100%" rows="5" maxlength="140">{{row_1.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_1_column_2" style="width: 100%" rows="5" maxlength="140">{{row_1.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_1_column_3" style="width: 100%" rows="5" maxlength="140">{{row_1.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_1_column_4" style="width: 100%" rows="5" maxlength="140">{{row_1.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">2</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_2_title" style="width: 100%" rows="3" maxlength="40">{{row_2.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_2_column_1" style="width: 100%" rows="5" maxlength="140">{{row_2.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_2_column_2" style="width: 100%" rows="5" maxlength="140">{{row_2.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_2_column_3" style="width: 100%" rows="5" maxlength="140">{{row_2.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_2_column_4" style="width: 100%" rows="5" maxlength="140">{{row_2.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">3</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_3_title" style="width: 100%" rows="3" maxlength="40">{{row_3.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_3_column_1" style="width: 100%" rows="5" maxlength="140">{{row_3.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_3_column_2" style="width: 100%" rows="5" maxlength="140">{{row_3.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_3_column_3" style="width: 100%" rows="5" maxlength="140">{{row_3.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_3_column_4" style="width: 100%" rows="5" maxlength="140">{{row_3.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">4</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_4_title" style="width: 100%" rows="3"  maxlength="40">{{row_4.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_4_column_1" style="width: 100%" rows="5" maxlength="140">{{row_4.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_4_column_2" style="width: 100%" rows="5" maxlength="140">{{row_4.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_4_column_3" style="width: 100%" rows="5" maxlength="140">{{row_4.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_4_column_4" style="width: 100%" rows="5" maxlength="140">{{row_4.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">5</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_5_title" style="width: 100%" rows="3" maxlength="40">{{row_5.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_5_column_1" style="width: 100%" rows="5" maxlength="140">{{row_5.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_5_column_2" style="width: 100%" rows="5" maxlength="140">{{row_5.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_5_column_3" style="width: 100%" rows="5" maxlength="140">{{row_5.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_5_column_4" style="width: 100%" rows="5" maxlength="140">{{row_5.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">6</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_6_title" style="width: 100%" rows="3" maxlength="40">{{row_6.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_6_column_1"  style="width: 100%" rows="5" maxlength="140">{{row_6.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_6_column_2" style="width: 100%" rows="5" maxlength="140">{{row_6.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_6_column_3" style="width: 100%" rows="5" maxlength="140">{{row_6.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_6_column_4" style="width: 100%" rows="5" maxlength="140">{{row_6.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">7</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_7_title" style="width: 100%" rows="3" maxlength="40">{{row_7.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_7_column_1" style="width: 100%" rows="5" maxlength="140">{{row_7.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_7_column_2" style="width: 100%" rows="5" maxlength="140">{{row_7.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_7_column_3" style="width: 100%" rows="5" maxlength="140">{{row_7.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_7_column_4" style="width: 100%" rows="5" maxlength="140">{{row_7.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">8</div>
+                                            <div class="mindset">
+                                                <div class="">
+                                                    <textarea class="text" name="row_8_title" style="width: 100%" rows="3" maxlength="40">{{row_8.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_8_column_1" style="width: 100%"  rows="5" maxlength="140">{{row_8.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_8_column_2" style="width: 100%"  rows="5" maxlength="140">{{row_8.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_8_column_3" style="width: 100%"  rows="5" maxlength="140">{{row_8.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="">
+                                                <textarea class="text" name="row_8_column_4"  style="width: 100%"  rows="5" maxlength="140">{{row_8.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <form>
+                                <input type="text" name="row_1_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_1_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_1_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_1_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_1_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_2_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_2_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_2_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_2_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_2_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_3_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_3_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_3_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_3_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_3_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_4_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_4_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_4_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_4_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_4_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_5_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_5_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_5_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_5_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_5_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_6_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_6_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_6_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_6_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_6_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_7_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_7_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_7_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_7_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_7_column_4" value="" class="form-control hide"/>
+                                <input type="text" name="row_8_title" value="" class="form-control hide"/>
+                                <input type="text" name="row_8_column_1" value="" class="form-control hide"/>
+                                <input type="text" name="row_8_column_2" value="" class="form-control hide"/>
+                                <input type="text" name="row_8_column_3" value="" class="form-control hide"/>
+                                <input type="text" name="row_8_column_4" value="" class="form-control hide"/>
+                                <button type="submit" class="form-control btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer id="footerBar">
+                Copyright 2017
+                <a>Admin Login</a>
+            </footer>
+        </div>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha256-UOSXsAgYN43P/oVrmU+JlHtiDGYWN2iHnJuKY9WD+Jg=" 
+        crossorigin="anonymous">
+    </script>
+    <script 
+        type="text/javascript" 
+        src="./scripts/update.js">
+    </script>
+</body>
+
+</html>
