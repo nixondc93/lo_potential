@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var axios = require('axios');
 var hbs = require('hbs');
 var session = require('express-session');
+var FileStore = require('session-file-store')(session);
 var formData = require('./store/form.json');
 var testData = require('./store/testform.json');
 var userData = require('./store/user.json');
@@ -13,31 +14,44 @@ var app = Express();
 var port = process.env.PORT || 3000;
 
 
+app.set('view engine', "hbs"); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(Express.static(__dirname + '/public'));
 
+
 app.use(session({
   saveUninitialized: true,
-  resave: true,
+  store: new FileStore(),
+  resave: false,
   secret: 'SuperSecretCookie',
   cookie: { maxAge: 60 * 60 * 1000 }
 }));
 
-app.set('view engine', "hbs"); 
 
 app.get('/', function(req, res){
+    console.log(req.session.email);
     res.render('index.hbs', testData);
 });
 
 app.get('/login', function(req, res){
+    console.log(req.session.email);
+    if(req.session.email){
+        res.redirect('/update');
+    }
     res.render('login.hbs');
 });
 
 app.get('/update', function(req, res){
-    res.render('update.hbs', testData); 
+    console.log(req.session.email);
+    if(req.session.email){
+        res.render('update.hbs', testData);     
+    }else{
+        res.redirect('/login');
+    }
 });
 
 app.post('/update', function(req, res){
+    console.log(req.session.email);
     var data = req.body; 
     var json = {
         "row_1": {
@@ -97,31 +111,46 @@ app.post('/update', function(req, res){
             "column_4": data.row_8_column_4[0]
         }
     };
-    new Promise (function(resolve, reject){
+
+    function test(){
+        
+    }
+
+    // new Promise (function(resolve, reject){
         fs.writeFile('./store/testform.json', JSON.stringify(json), function(err){
             if(err){
-                reject(err); 
+                // reject(err);  
+
             } else {
-                resolve();
+                // resolve(data);
+                res.status(201).send('ok');
             }
         });
-    }).then(function(succ){
-        res.status(201).send(succ + "");
-    }).catch(function(err){
-        res.status(405).send(err);
-    });
+    // }).then(function(succ){
+        
+        // return; 
+    // }).catch(function(err){
+        // res.status(405).send(err);
+        // return; 
+    // });
 });
 
 app.post('/authenticate', function(req, res){
     var email = req.body.email;
-    console.log('plain text password', req.body.password);
+    
+    if(email !== userData.email){
+        return res.redirect('/login');
+    }
+
     // bcrypt.hash(req.body.password, 10, function(err, hash){
-        bcrypt.compare(req.body.password, userData.password, function(err, res) {
+    bcrypt.compare(req.body.password, userData.password, function(err) {
         if(!err){ 
-            // response.redirect('/update');
-            return console.log('Administrator authenticated: ', email, '\n\nHash: ', res);
+            req.session.email = email; 
+            res.redirect('/update');
+            res.end(); 
+            return;
         }
-        console.log('There was and error authenticatingAdmin.', err);
+        res.status(405).send(err);
     });
 });
 

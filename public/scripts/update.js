@@ -15,15 +15,16 @@ function autorun() {
             url: '/update',
             type: 'POST',
             data: $('form').serialize(),
-            success: function (response) {          
-                console.log(response);
-                var url = $(location).attr("href");
-                url = url.substr(0, (url.length - 7));
-                console.log(url);
-                 window.location.replace('/');
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (response) {
+                // setTimeout(function(){
+                    window.location.replace('/');
+                // }, 5000);
             },
             error: function (xhr, status, error) {
-                console.log("XHR: ", xhr, "\nStatus: ", status, "\nError: ", error);
+                alert("An Error Occured\nStatus: ", status, "\nError: ", error);
             }
         });
     });
