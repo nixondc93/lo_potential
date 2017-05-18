@@ -28,20 +28,19 @@ function autorun() {
         },
         submitHandler: function (form, e) {
             e.preventDefault();
-            console.log('submitting')
             $.ajax({
                 url: '/post',
                 type: 'POST',
                 data: $('form').serialize(),
                 success: function (response) {    
-                    console.log('success');
                     $('select').val('');
                     $('input').val('');
                     $('.success').removeClass('hide');
-                    console.log('end success');
+                    $('#score').html('0');
+                    $('#goal').html('0');
                 },
                 error: function (xhr, status, error) {
-                    console.log("XHR: ", xhr, "\nStatus: ", status, "\nError: ", error);
+                    console.log("Error: ", error);
                     $('.error').removeClass('hide');
                 }
             });

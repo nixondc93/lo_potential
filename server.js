@@ -164,11 +164,9 @@ app.post('/post', function(req, res){
     var data = req.body;
     axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', data)
     .then(function(response){
-        console.log('success');
         res.status(201).send('OK');
     })
     .catch(function(error){
-        console.log('status: ', error);
         res.status(418).send('Error: ' + error);
     });
 });
