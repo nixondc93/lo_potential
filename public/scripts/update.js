@@ -14,14 +14,13 @@ function autorun() {
         $.ajax({
             url: '/update',
             type: 'POST',
+            async: false,
             data: $('form').serialize(),
             xhrFields: {
                 withCredentials: true
             },
             success: function (response) {
-                // setTimeout(function(){
-                    window.location.replace('/');
-                // }, 5000);
+                window.location.replace('/');
             },
             error: function (xhr, status, error) {
                 alert("An Error Occured\nStatus: ", status, "\nError: ", error);

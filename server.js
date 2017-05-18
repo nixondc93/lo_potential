@@ -29,29 +29,39 @@ app.use(session({
 
 
 app.get('/', function(req, res){
-    console.log(req.session.email);
-    res.render('index.hbs', testData);
+    fs.readFile('./store/testform.json', 'utf8', function(err, data){
+        if(!err){
+            res.render('index.hbs', JSON.parse(data));
+        }else{
+            res.status(404).send("An Error Occured");
+        }
+    });
+    
 });
 
 app.get('/login', function(req, res){
-    console.log(req.session.email);
     if(req.session.email){
         res.redirect('/update');
+    }else{
+        res.render('login.hbs');
     }
-    res.render('login.hbs');
 });
 
 app.get('/update', function(req, res){
-    console.log(req.session.email);
     if(req.session.email){
-        res.render('update.hbs', testData);     
+        fs.readFile('./store/testform.json', 'utf8', function(err, data){
+            if(!err){
+                res.render('update.hbs', JSON.parse(data));
+            }else{
+                res.status(404).send("An Error Occured");
+            }
+        });
     }else{
         res.redirect('/login');
     }
 });
 
 app.post('/update', function(req, res){
-    console.log(req.session.email);
     var data = req.body; 
     var json = {
         "row_1": {
@@ -112,27 +122,22 @@ app.post('/update', function(req, res){
         }
     };
 
-    function test(){
-        
-    }
-
-    // new Promise (function(resolve, reject){
+    new Promise (function(resolve, reject){
         fs.writeFile('./store/testform.json', JSON.stringify(json), function(err){
             if(err){
-                // reject(err);  
-
+                reject(err); 
+                return; 
             } else {
-                // resolve(data);
-                res.status(201).send('ok');
+                return resolve();
             }
         });
-    // }).then(function(succ){
-        
-        // return; 
-    // }).catch(function(err){
-        // res.status(405).send(err);
-        // return; 
-    // });
+    }).then(function(succ){
+        res.status(201).send(succ + "");
+        return; 
+    }).catch(function(err){
+        res.status(405).send(err);
+        return; 
+    });
 });
 
 app.post('/authenticate', function(req, res){
@@ -143,14 +148,15 @@ app.post('/authenticate', function(req, res){
     }
 
     // bcrypt.hash(req.body.password, 10, function(err, hash){
-    bcrypt.compare(req.body.password, userData.password, function(err) {
+    bcrypt.compare(req.body.password, userData.password, function(err, data) {
         if(!err){ 
             req.session.email = email; 
             res.redirect('/update');
             res.end(); 
             return;
-        }
+        }else{
         res.status(405).send(err);
+        }
     });
 });
 
