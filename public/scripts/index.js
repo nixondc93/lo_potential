@@ -28,15 +28,17 @@ function autorun() {
         },
         submitHandler: function (form, e) {
             e.preventDefault();
-
+            console.log('submitting')
             $.ajax({
                 url: '/post',
                 type: 'POST',
                 data: $('form').serialize(),
-                success: function (response) {          
+                success: function (response) {    
+                    console.log('success');
                     $('select').val('');
                     $('input').val('');
                     $('.success').removeClass('hide');
+                    console.log('end success');
                 },
                 error: function (xhr, status, error) {
                     console.log("XHR: ", xhr, "\nStatus: ", status, "\nError: ", error);
