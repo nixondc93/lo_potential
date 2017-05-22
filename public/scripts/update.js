@@ -20,7 +20,7 @@ function autorun() {
                 withCredentials: true
             },
             success: function (response) {
-                window.location.replace('/');
+                window.location.replace('/test');
             },
             error: function (xhr, status, error) {
                 alert("An Error Occured\nStatus: ", status, "\nError: ", error);

@@ -9,6 +9,7 @@ var FileStore = require('session-file-store')(session);
 var formData = require('./store/form.json');
 var testData = require('./store/testform.json');
 var userData = require('./store/user.json');
+var nodemailer = require('nodemailer');
 
 var app = Express(); 
 var port = process.env.PORT || 3000;
@@ -18,20 +19,36 @@ app.set('view engine', "hbs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(Express.static(__dirname + '/public'));
 
+// var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'nixondc93@gmail.com',
+//         pass: 'm8HY{>x8WVMyudemtx3UH/'
+//     }
+// });
+
 
 app.use(session({
   saveUninitialized: true,
   store: new FileStore(),
   resave: false,
   secret: 'SuperSecretCookie',
-  cookie: { maxAge: 60 * 60 * 1000 }
+  cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }));
 
 
 app.get('/', function(req, res){
+    res.render('index.hbs');
+});
+
+app.get('/test', function(req, res){
     fs.readFile('./store/testform.json', 'utf8', function(err, data){
         if(!err){
-            res.render('index.hbs', JSON.parse(data));
+            data = JSON.parse(data);
+            data.firstName = req.session.firstName;
+            data.lastName = req.session.lastName; 
+            data.userEmail = req.session.userEmail; 
+            res.render('test.hbs', data);
         }else{
             res.status(404).send("An Error Occured");
         }
@@ -61,8 +78,16 @@ app.get('/update', function(req, res){
     }
 });
 
+app.post('/user-data', function(req, res){
+    req.session.firstName = req.body.firstName;
+    req.session.lastName = req.body.lastName; 
+    req.session.userEmail = req.body.email; 
+    res.status(201).send("OK");
+});
+
 app.post('/update', function(req, res){
     var data = req.body; 
+    
     var json = {
         "row_1": {
             "title": data.row_1_title[0],
@@ -160,8 +185,29 @@ app.post('/authenticate', function(req, res){
     });
 });
 
+
+
 app.post('/post', function(req, res){
     var data = req.body;
+
+    // var mailOptions = {
+    //     from: '"Ben Chenault" <nixondc93@gmail.com>', // sender address
+    //     to: req.session.userEmail, // list of receivers
+    //     subject: 'Loan Officer Potential ✔', // Subject line
+    //     text: 'Hello world ?', // plain text body
+    //     html: '<b>Hello world ?</b>' // html body
+    // };
+
+    // transporter.sendMail(mailOptions, function(error, info){
+    //     if(error){
+    //         console.log(error);
+    //         // res.json({yo: 'error'});
+    //     }else{
+    //         console.log('Message sent: ' + info.response);
+    //         // res.json({yo: info.response});
+    //     }
+    // });
+
     axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', data)
     .then(function(response){
         res.status(201).send('OK');

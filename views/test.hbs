@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Know Your Score</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./styles/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./styles/stylesheet.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+        <div data-reactroot="" id="app">
+            <header id="headerBar">
+                <div class="wrapper">
+                    <h1>Know Your Score</h1>
+                </div>
+            </header>
+            <main>
+                <div id="scorecard">
+                    <div id="overview">
+
+                        <div class="scorecard">
+                            <h2>
+                                <div class="field field-title disabled">
+                                    <textarea class="text" disabled="" maxlength="26">Top Loan Officer Potential</textarea>
+                                </div>
+                            </h2>
+                            <table id="score_table">
+                                <thead>
+                                    <tr class="header">
+                                        <th>Mindsets</th>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td class="score">Score</td>
+                                        <td class="goal">Goal</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">1</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_1.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_1.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_1.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_1.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_1.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_1_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_1_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">2</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_2.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_2.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_2.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_2.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_2.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_2_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_2_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">3</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_3.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_3.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_3.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_3.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_3.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_3_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_3_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">4</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_4.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_4.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_4.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_4.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_4.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                     <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_4_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_4_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">5</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_5.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_5.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_5.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_5.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_5.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_5_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_5_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">6</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" name="title" disabled="" maxlength="40">{{row_6.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" name="row_1" disabled="" maxlength="140">{{row_6.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_6.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_6.column_3}}</textarea>
+
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_6.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_6_score">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_6_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">7</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_7.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_7.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_7.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_7.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_7.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                    <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_7_score" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6"></option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_7_goal" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="2">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="row-number">8</div>
+                                            <div class="mindset">
+                                                <div class="field disabled">
+                                                    <textarea class="text" disabled="" maxlength="40">{{row_8.title}}</textarea>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_8.column_1}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_8.column_2}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_8.column_3}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="field disabled">
+                                                <textarea class="text" disabled="" maxlength="140">{{row_8.column_4}}</textarea>
+                                            </div>
+                                        </td>
+                                        <td colspan="1" class="score">
+                                            <div class="field disabled">
+                                                <select class="selection" name="row_8_score" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                            <td class="goal">
+                                              <div class="field disabled">
+                                                <select class="selection" name="row_8_goal">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="" selected="selected"></option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="footer">
+                                        <th>
+                                            <div class="total-label">Total Scores</div>
+                                        </th>
+                                        <td colspan="12">
+                                        </td>
+                                        <td id="score">0</td>
+                                        <td id="goal">0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div class="info">
+                                <div class="survey" id="survey-intro">
+                                    {{!--<h2><strong>Submit Your Test</strong></h2>--}}
+                                    {{!--<p>Once you've completed the scorecard, please add your name and email. After you submit an email with your completed scorecard will be sent to you.</p>--}}
+                                    <form id="contact_form">
+                                        <input type="text" name="row_1_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_1_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_2_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_2_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_3_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_3_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_4_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_4_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_5_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_5_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_6_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_6_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_7_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_7_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_8_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="row_8_goal" value="" class="valid form-control hide"/>
+                                        <input type="text" name="total_score" value="" class="valid form-control hide"/>
+                                        <input type="text" name="total_goal" value="" class="valid form-control hide"/>
+                                        <div><input type="text" name="firstName" value="{{firstName}}" placeholder="First Name" class="form-control hide"/></div>
+                                        <div><input type="text" name="lastName" value="{{lastName}}" placeholder="Last Name" class="form-control hide"/></div>
+                                        <div><input type="email" name="email" value="{{userEmail}}" placeholder="Email" class="form-control hide"/></div>
+                                        <div><button type="submit" class="form-control btn testbtn">Submit</button></div>
+                                    </form>
+                                    <h4 class="hide success">You successfully submitted your information. Thank you! </h4>
+                                    <h4 class="hide error">We're sorry there has been an error. Please try again later.</h4> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer id="footerBar">
+                Copyright 2017
+                <a href="/login">Admin Login</a>
+            </footer>
+        </div>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha256-UOSXsAgYN43P/oVrmU+JlHtiDGYWN2iHnJuKY9WD+Jg=" 
+        crossorigin="anonymous">
+    </script>
+    <script 
+        type="text/javascript" 
+        src="./scripts/test.js">
+    </script>
+</body>
+
+</html>
