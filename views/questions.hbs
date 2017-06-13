@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Know Your Score</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="/styles/normalize.css" type="text/css">
+    <link rel="stylesheet" href="/styles/stylesheet.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+        <header id="headerBar">
+            <div class="wrapper">
+                <h1>Know Your Score</h1>
+            </div>
+        </header>
+        <main>
+            <div id="scorecard">
+                <div class="mindset" id="mindset-1">
+                    <h2><strong>Mindset: {{number}}</strong> {{title}}
+                    </h2>
+                    <hr>
+                    <table class="criteria">
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td rowspan="3">
+                                    <div class="criteria-text">{{column_1}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td rowspan="3">
+                                    <div class="criteria-text">{{column_2}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td rowspan="3">
+                                    <div class="criteria-text">{{column_3}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td rowspan="3">
+                                    <div class="criteria-text">{{column_4}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <form action="/question/{{number}}" method="Post">
+                        <div class="score">
+                            <input type="text" name="score" class="form-control" placeholder="How would you rate yourself, on a scale of 1-12?"
+                                tabindex="1" value="">
+                            <input type="text" name="goal" class="form-control" placeholder="What is your ideal goal, on a scale of 1-12?"
+                                tabindex="2" value="">
+                            <textarea class="form-control" name="feedback" placeholder="Insights and Actions" tabindex="3"
+                                maxlength="1000"></textarea>
+                            <input type="submit" class="form-control btn" value="Next">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer id="footerBar">
+            Copyright 2017
+            <a href="/login">Admin Login</a>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha256-UOSXsAgYN43P/oVrmU+JlHtiDGYWN2iHnJuKY9WD+Jg="
+        crossorigin="anonymous">
+
+        </script>
+    <script type="text/javascript" src="/scripts/questions.js">
+
+    </script>
+</body>
+
+</html>

@@ -6,6 +6,10 @@
     color: red; 
 }
 
+.selection{
+    font-size: 15px;
+}
+
 .btn {
     background-color: #644459;
     border: 1px solid #644459;
@@ -38,7 +42,6 @@ body {
     color: #000;
     font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    min-width: 925px;
 }
 
 a {

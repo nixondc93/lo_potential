@@ -42,23 +42,77 @@ app.use(session({
 
 
 app.get('/', function (req, res) {
-    res.render('index.hbs');
-});
-
-app.get('/test', function (req, res) {
     fs.readFile('./store/testform.json', 'utf8', function (err, data) {
         if (!err) {
             data = JSON.parse(data);
-            data.firstName = req.session.firstName;
-            data.lastName = req.session.lastName;
-            data.userEmail = req.session.userEmail;
             res.render('test.hbs', data);
         } else {
             res.status(404).send("An Error Occured");
         }
     });
-
 });
+
+app.get('/info', function (req, res) {
+    res.render('info.hbs');
+});
+
+app.get('/question/:number', function(req, res){
+        fs.readFile('./store/testform.json', 'utf8', function (err, data) {
+        if (!err) {
+            data = JSON.parse(data);
+            data = data['row_' + req.params.number];
+            data.number = req.params.number; 
+            res.render('questions.hbs', data); 
+        } else {
+            res.status(404).send("An Error Occured");
+        }
+    });
+});
+
+app.post('/question/:number', function(req, res){
+    
+    req.session['question_' + parseInt(req.params.number)] = {};
+    req.session['question_' + parseInt(req.params.number)].score = req.body.score;
+    req.session['question_' + parseInt(req.params.number)].goal = req.body.goal; 
+    req.session['question_' + parseInt(req.params.number)].feedback = req.body.feedback;
+
+    if(parseInt(req.params.number) === 8){
+        res.redirect('/thank-you');
+    }else{
+        res.redirect('/question/' + (parseInt(req.params.number) + 1));
+    } 
+});
+
+app.get('/thank-you', function(req, res){
+    // axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', data)
+    //     .then(function (response) {
+    //         res.status(201).send('OK');
+    //     })
+    //     .catch(function (error) {
+    //         res.status(418).send('Error: ' + error);
+    //     });
+
+    fs.readFile('./store/testform.json', 'utf8', function (err, data) {
+        if (!err) {
+            data = JSON.parse(data); 
+            data.question_1 = req.session.question_1;
+            data.question_2 = req.session.question_2;
+            data.question_3 = req.session.question_3;
+            data.question_4 = req.session.question_4;
+            data.question_5 = req.session.question_5;
+            data.question_6 = req.session.question_6;
+            data.question_7 = req.session.question_7;
+            data.question_8 = req.session.question_8;
+            data.name = req.session.firstName + ' ' + req.session.lastName;
+            data.scoreTotal = parseInt(req.session.question_1.score) + parseInt(req.session.question_2.score) + parseInt(req.session.question_3.score) + parseInt(req.session.question_4.score) + parseInt(req.session.question_5.score) + parseInt(req.session.question_6.score) + parseInt(req.session.question_7.score) + parseInt(req.session.question_8.score);
+            data.goalTotal = parseInt(req.session.question_1.goal) + parseInt(req.session.question_2.goal) + parseInt(req.session.question_3.goal) + parseInt(req.session.question_4.goal) + parseInt(req.session.question_5.goal) + parseInt(req.session.question_6.goal) + parseInt(req.session.question_7.goal) + parseInt(req.session.question_8.goal);
+            console.log(req.session);
+            res.render('completed.hbs', data);
+        } else {
+            res.status(404).send("An Error Occured");
+        }
+    });
+}); 
 
 app.get('/login', function (req, res) {
     if (req.session.email) {
@@ -83,10 +137,12 @@ app.get('/update', function (req, res) {
 });
 
 app.post('/user-data', function (req, res) {
+    console.log('body: ', req.body);
     req.session.firstName = req.body.firstName;
     req.session.lastName = req.body.lastName;
     req.session.userEmail = req.body.email;
-    res.status(201).send("OK");
+    console.log('session: ',req.session)
+    res.redirect('/question/1');
 });
 
 app.post('/update', function (req, res) {
@@ -155,9 +211,8 @@ app.post('/update', function (req, res) {
         fs.writeFile('./store/testform.json', JSON.stringify(json), function (err) {
             if (err) {
                 reject(err);
-                return;
             } else {
-                return resolve();
+                resolve();
             }
         });
     }).then(function (succ) {

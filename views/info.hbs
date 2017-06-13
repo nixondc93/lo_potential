@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./styles/normalize.css" type="text/css">
     <link rel="stylesheet" href="./styles/stylesheet.css" type="text/css">
 </head>
+
 <body>
     <div id="root">
         <header id="headerBar">
@@ -26,13 +27,9 @@
         <main>
             <div class="info">
                 <div class="survey" id="survey-intro">
-                    <h2><strong>Introduction</strong></h2>
-                        <p>
-                            You've been invited to complete the scorecard
-                            <strong>"Top Loan Officer Potential".</strong>
-                            Submit your name and email to get started.
-                            The process should take about 5 minutes.
-                        </p>
+                    <h2><strong>Your Information</strong></h2>
+                    <p>When completing the scorecard, all fields must be filled in correctly. Once you've completed the scorecard,
+                        an email with your completed scorecard will be sent to you.</p>
                     <form action="/user-data" method="POST" id="contact_form">
                         <div><input type="text" name="firstName" value="" placeholder="First Name" class="form-control" /></div>
                         <div><input type="text" name="lastName" value="" placeholder="Last Name" class="form-control" /></div>
@@ -57,7 +54,7 @@
         crossorigin="anonymous">
 
         </script>
-    <script type="text/javascript" src="./scripts/index.js">
+    <script type="text/javascript" src="./scripts/info.js">
 
     </script>
 </body>
