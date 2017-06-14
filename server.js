@@ -57,16 +57,20 @@ app.get('/info', function (req, res) {
 });
 
 app.get('/question/:number', function (req, res) {
-    fs.readFile('./store/testform.json', 'utf8', function (err, data) {
-        if (!err) {
-            data = JSON.parse(data);
-            data = data['row_' + req.params.number];
-            data.number = req.params.number;
-            res.render('questions.hbs', data);
-        } else {
-            res.status(404).send("An Error Occured");
-        }
-    });
+    if(req.session.userEmail === undefined){
+        res.redirect('/info');
+    }else{
+        fs.readFile('./store/testform.json', 'utf8', function (err, data) {
+            if (!err) {
+                data = JSON.parse(data);
+                data = data['row_' + req.params.number];
+                data.number = req.params.number;
+                res.render('questions.hbs', data);
+            } else {
+                res.status(404).send("An Error Occured");
+            }
+        });
+    }
 });
 
 app.post('/question/:number', function (req, res) {
@@ -75,53 +79,63 @@ app.post('/question/:number', function (req, res) {
     req.session['question_' + parseInt(req.params.number)].score = req.body.score;
     req.session['question_' + parseInt(req.params.number)].goal = req.body.goal;
     req.session['question_' + parseInt(req.params.number)].feedback = req.body.feedback;
+    req.session.save(function(err) {
+        if (!err) {
+            if (parseInt(req.params.number) === 8) {
+                res.redirect('/thank-you');
+            } else {
+                res.redirect('/question/' + (parseInt(req.params.number) + 1));
+            }
+        }
+    });
 
-    if (parseInt(req.params.number) === 8) {
-        res.redirect('/thank-you');
-    } else {
-        res.redirect('/question/' + (parseInt(req.params.number) + 1));
-    }
+
 });
 
 app.get('/thank-you', function (req, res) {
+    console.log('Session in thank route: ', req.session, '\n------');
+    if(req.session.userEmail === undefined){
+        res.redirect('/info');
+    }else{
+        axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', {
+                name: req.session.firstName + " " + req.session.lastName,
+                email: req.session.userEmail, 
+                question_1: req.session.question_1,
+                question_2: req.session.question_2,
+                question_3: req.session.question_3,
+                question_4: req.session.question_4,
+                question_5: req.session.question_5,
+                question_6: req.session.question_6,
+                question_7: req.session.question_7,
+                question_8: req.session.question_8
+            })
+            .then(function (response) {
+                fs.readFile('./store/testform.json', 'utf8', function (err, data) {
+                    if (!err) {
+                        data = JSON.parse(data);
+                        data.question_1 = req.session.question_1;
+                        data.question_2 = req.session.question_2;
+                        data.question_3 = req.session.question_3;
+                        data.question_4 = req.session.question_4;
+                        data.question_5 = req.session.question_5;
+                        data.question_6 = req.session.question_6;
+                        data.question_7 = req.session.question_7;
+                        data.question_8 = req.session.question_8;
+                        data.name = req.session.firstName + ' ' + req.session.lastName;
+                        data.scoreTotal = parseInt(req.session.question_1.score) + parseInt(req.session.question_2.score) + parseInt(req.session.question_3.score) + parseInt(req.session.question_4.score) + parseInt(req.session.question_5.score) + parseInt(req.session.question_6.score) + parseInt(req.session.question_7.score) + parseInt(req.session.question_8.score);
+                        data.goalTotal = parseInt(req.session.question_1.goal) + parseInt(req.session.question_2.goal) + parseInt(req.session.question_3.goal) + parseInt(req.session.question_4.goal) + parseInt(req.session.question_5.goal) + parseInt(req.session.question_6.goal) + parseInt(req.session.question_7.goal) + parseInt(req.session.question_8.goal);
+                        req.session.destroy();
+                        res.render('completed.hbs', data);
+                    } else {
+                        res.status(404).send("An Error Occured\nPlease Try again later.");
+                    }
+                });
 
-    axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', {
-            question_1: req.session.question_1,
-            question_2: req.session.question_2,
-            question_3: req.session.question_3,
-            question_4: req.session.question_4,
-            question_5: req.session.question_5,
-            question_6: req.session.question_6,
-            question_7: req.session.question_7,
-            question_8: req.session.question_8
-        })
-        .then(function (response) {
-            fs.readFile('./store/testform.json', 'utf8', function (err, data) {
-                if (!err) {
-                    data = JSON.parse(data);
-                    data.question_1 = req.session.question_1;
-                    data.question_2 = req.session.question_2;
-                    data.question_3 = req.session.question_3;
-                    data.question_4 = req.session.question_4;
-                    data.question_5 = req.session.question_5;
-                    data.question_6 = req.session.question_6;
-                    data.question_7 = req.session.question_7;
-                    data.question_8 = req.session.question_8;
-                    data.name = req.session.firstName + ' ' + req.session.lastName;
-                    data.scoreTotal = parseInt(req.session.question_1.score) + parseInt(req.session.question_2.score) + parseInt(req.session.question_3.score) + parseInt(req.session.question_4.score) + parseInt(req.session.question_5.score) + parseInt(req.session.question_6.score) + parseInt(req.session.question_7.score) + parseInt(req.session.question_8.score);
-                    data.goalTotal = parseInt(req.session.question_1.goal) + parseInt(req.session.question_2.goal) + parseInt(req.session.question_3.goal) + parseInt(req.session.question_4.goal) + parseInt(req.session.question_5.goal) + parseInt(req.session.question_6.goal) + parseInt(req.session.question_7.goal) + parseInt(req.session.question_8.goal);
-                    console.log(req.session);
-                    res.render('completed.hbs', data);
-                } else {
-                    res.status(404).send("An Error Occured");
-                }
+            })
+            .catch(function (error) {
+                res.status(418).send('Error: ' + error);
             });
-
-        })
-        .catch(function (error) {
-            res.status(418).send('Error: ' + error);
-        });
-
+    }
 
 });
 
@@ -148,12 +162,16 @@ app.get('/update', function (req, res) {
 });
 
 app.post('/user-data', function (req, res) {
-    console.log('body: ', req.body);
+    
     req.session.firstName = req.body.firstName;
     req.session.lastName = req.body.lastName;
     req.session.userEmail = req.body.email;
-    console.log('session: ', req.session)
-    res.redirect('/question/1');
+    req.session.save(function(err) {
+        if (!err) {
+            res.redirect('/question/1');
+        }
+    });
+    
 });
 
 app.post('/update', function (req, res) {

@@ -85,9 +85,9 @@
                     <hr>
                     <form action="/question/{{number}}" method="Post">
                         <div class="score">
-                            <input type="text" name="score" class="form-control" placeholder="How would you rate yourself, on a scale of 1-12?"
+                            <input type="number" name="score" autofocus="true" class="form-control" placeholder="How would you rate yourself, on a scale of 1-12?"
                                 tabindex="1" value="">
-                            <input type="text" name="goal" class="form-control" placeholder="What is your ideal goal, on a scale of 1-12?"
+                            <input type="number" name="goal" class="form-control" placeholder="What is your ideal goal, on a scale of 1-12?"
                                 tabindex="2" value="">
                             <textarea class="form-control" name="feedback" placeholder="Insights and Actions" tabindex="3"
                                 maxlength="1000"></textarea>

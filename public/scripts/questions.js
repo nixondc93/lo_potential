@@ -1,10 +1,18 @@
 function autorun() {
-    $("#contact_form").validate({
+    $("form").validate({
         rules: {
-
+            score: {
+                required: true,
+                range: [1, 12]
+            },
+            goal: {
+                required: true,
+                range: [1, 12]
+            }
         },
         messages: {
-
+            score: "Please Enter a Number Between 1 - 12",
+            goal: "Please Enter a Number Between 1 - 12"
         }
     });
 }
