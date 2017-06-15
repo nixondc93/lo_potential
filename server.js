@@ -57,9 +57,9 @@ app.get('/info', function (req, res) {
 });
 
 app.get('/question/:number', function (req, res) {
-    if(req.session.userEmail === undefined){
+    if (req.session.userEmail === undefined) {
         res.redirect('/info');
-    }else{
+    } else {
         fs.readFile('./store/testform.json', 'utf8', function (err, data) {
             if (!err) {
                 data = JSON.parse(data);
@@ -79,7 +79,7 @@ app.post('/question/:number', function (req, res) {
     req.session['question_' + parseInt(req.params.number)].score = req.body.score;
     req.session['question_' + parseInt(req.params.number)].goal = req.body.goal;
     req.session['question_' + parseInt(req.params.number)].feedback = req.body.feedback;
-    req.session.save(function(err) {
+    req.session.save(function (err) {
         if (!err) {
             if (parseInt(req.params.number) === 8) {
                 res.redirect('/thank-you');
@@ -94,12 +94,12 @@ app.post('/question/:number', function (req, res) {
 
 app.get('/thank-you', function (req, res) {
     console.log('Session in thank route: ', req.session, '\n------');
-    if(req.session.userEmail === undefined){
+    if (req.session.userEmail === undefined || req.session.question_1 === undefined || req.session.question_2 === undefined || req.session.question_3 === undefined || req.session.question_4 === undefined || req.session.question_5 === undefined || req.session.question_6 === undefined || req.session.question_7 === undefined || req.session.question_8 === undefined || req.session.question_1 === undefined) {
         res.redirect('/info');
-    }else{
+    } else {
         axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', {
                 name: req.session.firstName + " " + req.session.lastName,
-                email: req.session.userEmail, 
+                email: req.session.userEmail,
                 question_1: req.session.question_1,
                 question_2: req.session.question_2,
                 question_3: req.session.question_3,
@@ -162,16 +162,16 @@ app.get('/update', function (req, res) {
 });
 
 app.post('/user-data', function (req, res) {
-    
+
     req.session.firstName = req.body.firstName;
     req.session.lastName = req.body.lastName;
     req.session.userEmail = req.body.email;
-    req.session.save(function(err) {
+    req.session.save(function (err) {
         if (!err) {
             res.redirect('/question/1');
         }
     });
-    
+
 });
 
 app.post('/update', function (req, res) {
