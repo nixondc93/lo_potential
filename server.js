@@ -97,7 +97,7 @@ app.get('/thank-you', function (req, res) {
     if (req.session.userEmail === undefined || req.session.question_1 === undefined || req.session.question_2 === undefined || req.session.question_3 === undefined || req.session.question_4 === undefined || req.session.question_5 === undefined || req.session.question_6 === undefined || req.session.question_7 === undefined || req.session.question_8 === undefined || req.session.question_1 === undefined) {
         res.redirect('/info');
     } else {
-        axios.post('https://www.tapapp.com/1755417/LeadImport/NewForm.aspx', {
+        axios.post('https://www.tapapp.com/2734856/LeadImport/Scorecard.aspx', {
                 name: req.session.firstName + " " + req.session.lastName,
                 email: req.session.userEmail,
                 question_1: req.session.question_1,
