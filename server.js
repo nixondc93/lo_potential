@@ -24,8 +24,8 @@ app.use(Express.static(__dirname + '/public'));
 // var transporter = nodemailer.createTransport({
 //     service: 'gmail',
 //     auth: {
-//         user: 'nixondc93@gmail.com',
-//         pass: 'm8HY{>x8WVMyudemtx3UH/'
+//         user: '',
+//         pass: ''
 //     }
 // });
 
@@ -278,7 +278,7 @@ app.post('/post', function (req, res) {
     var data = req.body;
 
     // var mailOptions = {
-    //     from: '"Ben Chenault" <nixondc93@gmail.com>', // sender address
+    //     from: '"Ben Chenault" ', // sender address
     //     to: req.session.userEmail, // list of receivers
     //     subject: 'Loan Officer Potential ✔', // Subject line
     //     text: 'Hello world ?', // plain text body
